@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>naissance</th>
+        <th>age</th>
+        <th>action</th>
+    </tr>
+    <tr>
+        <td>{{ monster.id }}</td>
+        <td>{{ monster.name }}</td>
+        <td>{{ monster.dob | date("d/m/Y") }}</td>
+        <td>{{ age }}</td>
+        <td>
+            <form method='POST' action='{{ path('monster_delete', {'id' : monster.id }) }}'>
+                <input type="submit" value="Supprimer">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><a href="{{ path('monster_index') }}">Retour à la liste</a></td>
+    </tr>
+</table>

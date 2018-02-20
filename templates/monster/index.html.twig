@@ -1,0 +1,20 @@
+<h1>Monster</h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+    </tr>
+{% for monster in monsters %}
+        <tr>
+            <td>{{ monster.id }}</td>
+            <td><a href="{{ path('monster_show', {'id': monster.id}) }}">{{ monster.name }}</a></td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="2">Pas de données</td>
+        </tr>
+{% endfor %}
+        <tr>
+            <td colspan="2"><a href="{{ path('monster_register') }}">Ajouter un monstre</a></td>
+        </tr>
+</table>
